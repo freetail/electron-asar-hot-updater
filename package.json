@@ -1,15 +1,46 @@
 {
-  "name": "electron-asar-hot-updater",
-  "version": "0.1.0",
+  "_args": [
+    [
+      "electron-asar-hot-updater@0.0.3",
+      "C:\\dev_apps\\NodeJs\\vmclientnewelectron"
+    ]
+  ],
+  "_from": "electron-asar-hot-updater@0.0.3",
+  "_id": "electron-asar-hot-updater@0.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-bSIf5uFLndSUDvxCkmN6FrjIRM0BOSGedGEmlpfMLxQOonyJ6GOr6lxaD6nnxhhPB1eY59K92LGtr9s7JcEJvg==",
+  "_location": "/electron-asar-hot-updater",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "electron-asar-hot-updater@0.0.3",
+    "name": "electron-asar-hot-updater",
+    "escapedName": "electron-asar-hot-updater",
+    "rawSpec": "0.0.3",
+    "saveSpec": null,
+    "fetchSpec": "0.0.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/electron-asar-hot-updater/-/electron-asar-hot-updater-0.0.3.tgz",
+  "_spec": "0.0.3",
+  "_where": "C:\\dev_apps\\NodeJs\\vmclientnewelectron",
+  "author": {
+    "name": "leiyswork@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/yansenlei/electron-asar-hot-updater/issues"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.11",
+    "original-fs": "^1.0.0",
+    "request": "^2.87.0",
+    "request-progress": "^3.0.0"
+  },
   "description": "Handles Electron app.asar updates.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yansenlei/electron-asar-hot-updater"
-  },
+  "homepage": "https://github.com/yansenlei/electron-asar-hot-updater#readme",
   "keywords": [
     "electron",
     "asar",
@@ -17,13 +48,15 @@
     "update",
     "updater"
   ],
-  "author": "leiyswork@gmail.com",
   "license": "MIT",
-  "dependencies": {
-    "adm-zip": "^0.4.11",
-    "original-fs": "^1.0.0",
-    "request": "^2.87.0",
-    "request-progress": "^3.0.0",
-    "semver-diff": "^3.0.0"
-  }
+  "main": "index.js",
+  "name": "electron-asar-hot-updater",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yansenlei/electron-asar-hot-updater.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.3"
 }

@@ -1,14 +1,5 @@
 # electron-asar-hot-updater
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyansenlei%2Felectron-asar-hot-updater.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fyansenlei%2Felectron-asar-hot-updater?ref=badge_shield)
-[![npm version](https://badge.fury.io/js/electron-asar-hot-updater.svg)](https://badge.fury.io/js/electron-asar-hot-updater)
-
 [![NPM](https://nodei.co/npm/electron-asar-hot-updater.png)](https://nodei.co/npm/electron-asar-hot-updater/)
-
-[中文文档](README-CN.md) | English
-
-[Update demo](https://github.com/yansenlei/asar-update-project)
-
 ## What it is
 > A NodeJs module for Electron, that handles app.asar updates. Reconstruction of `electron-asar-updater`
 
@@ -45,14 +36,7 @@ app.on('ready', function () {
   // Initiate the module
   EAU.init({
     'api': 'http://...', // The API EAU will talk to
-    'server': false, // Where to check. true: server side, false: client side, default: true.
-    'debug': false, // Default: false.
-    'headers': { Authorization: 'token' }, // Default: {}
-    'body': {
-      name: packageInfo.name,
-      current: packageInfo.version
-    }, // Default: name and the current version
-    'formatRes': function(res) { return res } // Optional,Format the EAU.check response body, exemple => {version: xx, asar: xx}
+    'server': false // Where to check. true: server side, false: client side, default: true.
   });
 
   EAU.check(function (error, last, body) {
@@ -83,13 +67,7 @@ app.on('ready', function () {
         dialog.showErrorBox('info', error)
         return false
       }
-      // dialog.showErrorBox('info', 'App updated successfully! Restart it please.')
-      if (process.platform === 'darwin') {
-        app.relaunch()
-        app.quit()
-      } else {
-        app.quit()
-      }
+      dialog.showErrorBox('info', 'App updated successfully! Restart it please.')
     })
 
   })
@@ -128,7 +106,6 @@ app.post('/update', function (req, res) {
     "name": "app",
     "version": "0.0.1",
     "asar": "http://127.0.0.1:8083/update.asar",
-    "sha1": "203448645d8a32b9a08ca9a0eb88006f874d0c78", // Optional, If set, verify `asar` file legitimacy
     "info": "1.fix bug\n2.feat..."
   } ).replace(/[\/]/g, '\\/') );
   res.end();
@@ -139,13 +116,6 @@ If you use a zip file, the plug-in will unzip the file after downloading it, whi
 ── update.zip
    └── update.asar
 ```
-
-Now uses a really dumb-but-simple .exe to update
-
-This is to get around the fact that the prompt text from the timeout command was always being shown, even when redirecting to NUL
-
-The updater.exe is a really simple C# console app, compiled with [Mono](http://www.mono-project.com).
-[Source code](./updater.cs). from [electron-asar-updater pull #2](https://github.com/whitesmith/electron-asar-updater/pull/2). If the user system version is win7, you may need to manually install [.Net framework](https://dotnet.microsoft.com/download/dotnet-framework) first.
 
 ## License
 
